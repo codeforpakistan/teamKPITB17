@@ -10,6 +10,8 @@ INNER JOIN tblusers ON tblcomments.UserID = tblusers.UserID where tblcomments.p_
 $num=mysqli_num_rows($comment);
   ////////////////////// comment///////////
    
+  ////////////////////// comment///////////
+  ////////////////////// comment///////////
 
 ?>
 
