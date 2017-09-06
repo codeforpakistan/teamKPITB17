@@ -15,7 +15,7 @@ $projects = @$query->select_record($sql);
 if ($_POST) {
         $id = $_POST['invest_id'];
         $fields = array('invest_fname', 'invest_lname','invest_email', 'invest_address', 'invest_country', 'invest_city', 'invest_cell'
-            , 'invest_phone', 'invest_comment', 'UserID', 'invest_amount', 'p_id', 'invest_status');
+            , 'invest_phone', 'invest_comment', 'UserID', 'invest_amount', 'p_id');
         $sql = $query->update_record('tblinvestments', $fields, "invest_id = $id");
 
         if (mysqli_query($connect, $sql)) {
@@ -130,10 +130,13 @@ if ($_POST) {
                                             </div>
                                              <div class="form-group col-lg-6">
                                                 <label>Status</label>
-                                                <select class="form-control" name="invest_status">
-                                                    <option <?php echo ($row['invest_status'] == 1?'selected': ''); ?> value="1">Active</option>
-                                                    <option <?php echo ($row['invest_status'] == 0?'selected': ''); ?> value="0">Deactive</option>
-                                                </select>
+                                                <?php if($row['invest_status'] == 1){
+													$value='verified';
+													} 
+													else {
+														$value = 'Not Verified';
+														}?>
+                                                 <input class="form-control" name="dada" value="<?php echo $value; ?>" readonly>
                                             </div>
                                               
                                         </div>

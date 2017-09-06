@@ -413,3 +413,78 @@
 @media only screen and (min-width: 1020px) and (max-width: 1100px) {.pie_progress {left:10px;}}
 
 @media only screen and (min-width: 1024px) and (max-width: 1024px) {.pie_progress {left:14px;}}
+
+  @media only screen and (max-width: 600px) {
+    .main-container {
+        padding: 0px 50px !important;
+    }
+}
+
+@media only screen and (max-width: 1150px) and (min-width: 860px) {
+  .row > .container {
+     bottom: 350px !important;
+  }
+}
+@media only screen and (max-width: 860px) and (min-width: 700px) {
+  .row > .container {
+     bottom: 280px !important;
+  }
+}
+@media only screen and (max-width: 700px) and (min-width: 550px) {
+  .row > .container {
+     bottom: 245px !important;
+  }
+    .row > .container > p {
+    font-size: 1.0em !important;
+  }
+}
+@media only screen and (max-width: 390px) and (min-width: 360px) {
+  .row > .container {
+     bottom: 160px !important;
+  }
+    .row > .container > p {
+    font-size: 0.8em !important;
+  }
+  .row > .container > h1 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 359px) and (min-width: 320px) {
+  .row > .container {
+     bottom: 145px !important;
+  }
+    .row > .container > p {
+    font-size: 0.8em !important;
+  }
+  .row > .container > h1 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 500px) and (min-width: 414px) {
+  .row > .container {
+     bottom: 185px !important;
+  }
+    .row > .container > p {
+    font-size: 1.0em !important;
+  }
+  .row > .container > h1 {
+    font-size: 35px;;
+  }
+}
+@media only screen and (max-width: 414px) and (min-width: 375px) {
+  .row > .container {
+     bottom: 170px !important;
+  }
+    .row > .container > p {
+    font-size: 1.0em !important;
+  }
+  .row > .container > h1 {
+    font-size: 25px;
+  }
+}
+.row > .container > p {
+  font-size: 1.5em;
+}
+.row > .container {
+  bottom: 310px;
+}

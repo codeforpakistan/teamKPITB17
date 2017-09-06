@@ -60,18 +60,123 @@ elseif($record['c_status'] == 0){
 	$hash=$record['hash'];
 	
 	//////////////////// mail function /////////////////
-	
+	/*$message = '
+Welcome to Crowd Durshal - A place designed to give your startup a new life.</br>
+<span><a href="http://kpgoestech.com/crowddurshal/verify.php?email='.$email.'&&hash='.$hash.'">Confirm Your Email</a></span>
+  <br/>
+  In case button is not working, please click on the link below:</br>
+http://kpgoestech.com/crowddurshal/verify.php?email='.$email.'&&hash='.$hash.'
+<br/>
+<h3>Sent by Crowd Durshal: 134, Industrial Estate, Hayatabad، Peshawar 25000</h3>
+
+';*/
 	 $to     = $email;
 $subject = 'Company Email Verification';
 $user=$_SESSION['userid'];
 $name=$_SESSION['name'];
 $name = str_replace(' ', '', $name);
-$message = 'Please click this link to activate your account:
-http://daud.pakec.com/verify.php?email='.$email.'&&hash='.$hash.'
- 
-'; // Our message above including the link';
-$headers = 'From: md_dcservices.com' . "\r\n" .
-    'Reply-To: webmaster@example.com' . "\r\n" .
+$message="<table bgcolor='#ffffff' width='100%' border='0' cellspacing='0' cellpadding='0' class='tableContent' align='center'  style='font-family:Helvetica, Arial,serif;'>
+  <tbody>
+    <tr>
+      <td><table width='600' border='0' cellspacing='0' cellpadding='0' align='center' bgcolor='#ffffff' class='MainContainer'>
+  <tbody>
+    <tr>
+      <td><table width='100%' border='0' cellspacing='0' cellpadding='0'>
+  <tbody>
+    <tr>
+      <td valign='top' width='40'>&nbsp;</td>
+      <td><table width='100%' border='0' cellspacing='0' cellpadding='0'>
+  <tbody>
+  <!-- =============================== Header ====================================== -->   
+    <tr>
+    	<td height='75' class='spechide'></td>
+        
+        <!-- =============================== Body ====================================== -->
+    </tr>
+    <tr>
+      <td class='movableContentContainer ' valign='top'>
+      	<div class='movableContent' style='border: 0px; padding-top: 0px; position: relative;'>
+        	<table width='100%' border='0' cellspacing='0' cellpadding='0'>
+  <tbody>
+    <tr>
+      <td height='35'></td>
+    </tr>
+    <tr>
+      <td><table width='100%' border='0' cellspacing='0' cellpadding='0'>
+  <tbody>
+    <tr>
+      <td valign='top' align='center' class='specbundle'><div class='contentEditableContainer contentTextEditable'>
+                                <div class='contentEditable'>
+                                  <p style='text-align:center;margin:0;font-family:Georgia,Time,sans-serif;font-size:26px;color:#222222;'><span class='specbundle2'><span class='font1'>Welcome to Crowd Durshal;</span></span></p>
+                                </div>
+                              </div></td>
+     
+    </tr>
+  </tbody>
+</table>
+</td>
+    </tr>
+  </tbody>
+</table>
+ <div class='movableContent' style='border: 0px; padding-top: 0px; position: relative;'>
+        	<table width='100%' border='0' cellspacing='0' cellpadding='0' align='center'>
+                          <tr>
+                            <td valign='top' align='center'>
+                              <div class='contentEditableContainer contentImageEditable'>
+                                <div class='contentEditable'>
+                                  <img src='images/line.png' width='251' height='43' alt='' data-default='placeholder' data-max-width='560'>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+        </div>
+		
+		<div class='movableContent' style='border: 0px; padding-top: 0px; position: relative;'>
+        	<table width='100%' border='0' cellspacing='0' cellpadding='0' align='center'>
+                          <tr><td height='55'></td></tr>
+                          <tr>
+                            <td align='left'>
+                              <div class='contentEditableContainer contentTextEditable'>
+                                <div class='contentEditable' align='center'>
+                                  <h2 >Welcome to Crowd Durshal - A place designed to give your startup a new life</h2>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+
+                          <tr><td height='15'> </td></tr>
+
+                         
+
+                          <tr><td height='55'></td></tr>
+
+                          <tr>
+                            <td align='center'>
+                              <table>
+                                <tr>
+                                  <td align='center' bgcolor='#1A54BA' style='background:#1A54BA; padding:15px 18px;-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;'>
+                                    <div class='contentEditableContainer contentTextEditable'>
+                                      <div class='contentEditable' align='center'>
+                                        <a target='_blank' href='http://kpgoestech.com/crowddurshal/verify.php?email=".$email."&&hash=".$hash."' class='link2' style='color:#ffffff;'>Activate your Company</a>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr><td height='20'><h3>Sent by Crowd Durshal: 134, Industrial Estate, Hayatabad، Peshawar 25000</h3></td></tr>
+                        </table>
+        </div>
+
+
+";
+
+
+ // Our message above including the link';
+$headers = 'From: info@kpgoestech.com' . "\r\n" .
+    'Reply-To: webmaster@example.com' . "\r\n" ."MIME-Version: 1.0\r\n"."Content-Type: text/html; charset=ISO-8859-1\r\n".
     'X-Mailer: PHP/' . phpversion();
 mail($to, $subject, $message, $headers);
 	//////////////////// mail Function /////////////////
@@ -79,7 +184,7 @@ mail($to, $subject, $message, $headers);
 	if(mail)
 {
  $_SESSION['msg']='<span class="alert alert-info"><strong>Please Check Your Email For  For Verification</strong> </span>';	
-header('location:../../layout.php?tabe=companies');
+header('location:./company.php');
 exit();
 }
 else{

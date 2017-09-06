@@ -28,19 +28,19 @@ $rows = @$query->select_record($sql);
             <div class='form-row'>
               <div class='col-xs-12 form-group card required'>
                 <label class='control-label'>Current password</label>
-                <input class='form-control' name="current_password" size='4' type='text'>
+                <input class='form-control' name="current_password" size='4' type='password'>
               </div>
             </div>
             <div class='form-row'>
               <div class='col-xs-12 form-group card required'>
                 <label class='control-label'>New password</label>
-                <input autocomplete='off' name="Password" class='form-control card-number' size='20' type='text'>
+                <input autocomplete='off' name="Password" class='form-control card-number' size='20' type='password'>
               </div>
             </div>
              <div class='form-row'>
               <div class='col-xs-12 form-group card required'>
-                <label class='control-label'>Repeate password</label>
-                <input autocomplete='off' name="confirm_password" class='form-control' size='20' type='text'>
+                <label class='control-label'>Repeat password</label>
+                <input autocomplete='off' name="confirm_password" class='form-control' size='20' type='password'>
               </div>
             </div>    
            

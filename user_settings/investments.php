@@ -19,7 +19,7 @@ $rows = @$query->select_record($sql);
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                  
-                                     Investment History
+                                  Your Investment History
                                 </div>
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
@@ -38,6 +38,7 @@ $rows = @$query->select_record($sql);
                                         </thead>
                                         <tbody>
                                         <?php if (count($rows) > 0) {
+                                            $totalamount = 0;
 
                                             foreach($rows as $row) {?>
                                             <tr class="odd gradeX">

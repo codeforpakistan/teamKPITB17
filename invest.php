@@ -2,15 +2,17 @@
 require_once 'control_panel/config/config.php';
 require_once 'control_panel/config/connection.php';
 include('control_panel/user_security.php'); 
-?><!DOCTYPE HTML>
+
+?>
+<!DOCTYPE HTML>
 <html lang="en">
 
 <!-- Mirrored from html.stackthemes.net/Crowd Durshal-preview/start.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Apr 2017 07:16:54 GMT -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="keywords" content="Crowd Durshal HTML5 Template">
-<meta name="description" content="Crowd Durshal is a HTML5 Responsive Crowdfunding Template">
+<meta name="keywords" content="KP Crowd Funding PlatForm">
+<meta name="description" content="KP Crowd Funding PlatForm">
 <meta name="author" content="stackthemes.net">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,6 +30,12 @@ include('control_panel/user_security.php');
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+<style>
+  .form-content {
+    width: 100%;
+  }  
+</style>
+
 </head>
 
 <body>
@@ -38,7 +46,7 @@ include('control_panel/user_security.php');
   <!-- ************************ Header Bottom | Page Title ************************ -->
   <section class="header-bottom">
     <article>
-      <div class="container"><h3>Contribute On Project</h3></div>
+      <div class="container"><h3 style="padding-top:120px">Contribute On Project</h3></div>
     </article>
   </section>
   <!-- ************************ Breadcrumbs ************************ -->
@@ -69,10 +77,11 @@ include('control_panel/user_security.php');
       </div>
         <div class="title">
           <ul>
-              <li data-link="social-media" class="current"><a href="#"><i class="fa fa-book"></i><span>Aggreement</span></a></li>
-            <li data-link="basic-data" class=""><a href="#"><i class="fa fa-cc-paypal"></i><span>About you</span></a></li>
+           <!-- <li data-link="add-perks" class="current"><a href="#"><i class="fa fa-tags"></i><span>Select Perk</span></a></li>-->
+              <li data-link="social-media" class="current"><a href="#"><i class="fa fa-book"></i><span>Agreement</span></a></li>    
+               <li data-link="basic-data" class=""><a href="#"><i class="fa fa-cc-paypal"></i><span>About you</span></a></li>
         
-          <!--   <li data-link="add-perks" class=""><a href="#"><i class="fa fa-tags"></i><span>Add Perks</span></a></li>
+          <!--   
             <li data-link="image-vidoe" class=""><a href="#"><i class="fa fa-file-image-o"></i><span>Add Images or Video</span></a></li> -->
           </ul>
         </div>
@@ -80,8 +89,77 @@ include('control_panel/user_security.php');
         <div class="start-content">
           <form id="investment-form" action="control_panel/classes/user.php" method="post" enctype="multipart/form-data">
             
-            <div id="social-media" class="form-wizard active">
-              <article class="container">
+ <?php /*?><div id="add-perks" class="form-wizard active">
+              
+             
+             
+              <!--<div class="form-group col-lg-12">
+             
+                  <input type="url" value="" class="form-control" placeholder="Enter Amount " name="amount">
+                <div class="clear"></div>
+              </div>
+              -->
+				<?php 
+				 $perks=mysqli_query($connect, "Select * from  tblpreks where project_id = '".$_GET['project']."'"); 
+				 while($prec=mysqli_fetch_array($perks)){
+				   ?>
+              <div class="col-lg-12">
+          <div class="perks">
+              
+            <div class="team-content inner-perks">
+           <span>    <h2 style="margin-left: -24px; font-size:26px; color:#586BE9; padding-top:20px;
+"><input type="radio"  name="perk" class="perks__radio radio-btn"  value="<?php echo $prec['id']."|imabc|".$prec['contribute_amount'] ;  ?>  " >
+   
+           <?php echo 'Rs  '. $prec['contribute_amount']; ?></h2></span>
+       
+
+            <br>
+           
+            <h4 style="font-size:20; color:#000;"><?php echo $prec['perk_name']; ?></h4>
+              <br>
+            <p style="text-align:justify; color:#80809E;"><?php echo $prec['description']; ?></p>
+               
+          
+<br>
+           <span style="font-size:20; color:#000;">
+                ESTIMATED DELIVERY
+                 </span>
+              <p style="text-align:left;"><?php echo $prec['estimate_delivery_date']; ?></p>
+
+           </br>
+
+       
+           
+            
+               
+           </div>
+        
+          </div>
+ <br>
+ <br>
+         
+          
+        </div>
+               <?php  $i++; } ?>
+              
+            <div>
+              
+               
+
+
+
+
+            </div>
+              
+              <div class="next-btn">
+                <button type="button" class="btn btn-5 blue" data-link="add-perks" onClick="moveform(this,'add-perks')">Back</button>
+                <button type="button" class="btn btn-4 blue" data-link="social-media" onClick="moveform(this,'social-media')">Next</button>
+              </div>
+            </div><?php */?>
+
+            <div id="social-media" class="form-wizard active ">
+              <article class="container form-content">
+            
     <p>To help you fully understand the risks involved when investing in start-up companies, please take some time to read the following tutorial</p>
      <h4>Loss of investment</h4>
      <p align="justify">
@@ -137,25 +215,22 @@ Diversification is an essential part of investing. Investors should only invest 
               
               
               <div class="next-btn">
-               <!-- <button type="button" class="btn btn-5 blue" data-link="basic-data" onClick="moveform(this,'')">Back</button>-->
-                <button type="button" class="btn btn-4 blue" data-link="add-perks" onClick="moveform(this,'basic-data')">I Accept</button>
+               <button type="button" class="btn btn-5 blue" data-link="add-perks" onClick="moveform(this,'add-perks')">Back</button>
+                <button type="button" class="btn btn-4 blue" data-link="basic-data" onClick="moveform(this,'basic-data')">I Accept</button>
               </div>
             </div>
+
+            
             
             <div id="basic-data" class="form-wizard">
- <div class="form-group col-lg-12">
-                
-                  <input type="text" class="form-control" placeholder="InvestMent Amount" name="amount" value="<?php echo $_POST['amount']; ?>">
-                
-               
+            <div class=" form-group col-lg-12">
+            
+                  <input type="text" value="" class="form-control" placeholder="Please Enter The Amount You Want to Contribute in Ruppees" name="perk">
+             
                 <div class="clear"></div>
               </div>
-
-
-
-           	            
                 <div class="form-left form-group col-lg-6">
-                  <input type="text" value="<?php echo $_SESSION['firstname']; ?>" class="form-control" placeholder="First Name" name="fname">
+                  <input type="text" value="<?php echo $_SESSION['firstname']; ?>" class="form-control" placeholder="First Name" name="fname" autofocus>
                 </div>
                 <div class="form-right form-group col-lg-6">
                   <input type="text" value="<?php echo $_SESSION['lastname']; ?>" class="form-control" placeholder="Last Name" name="lname">
@@ -171,7 +246,7 @@ Diversification is an essential part of investing. Investors should only invest 
 
                <div class="form-group col-lg-12">
             
-                  <input type="text" value="" class="form-control" placeholder=" Your Address" name="address">
+                  <input type="text" value="" class="form-control" placeholder=" Your Address" name="address" autofocus>
              
                 <div class="clear"></div>
               </div>
@@ -188,26 +263,31 @@ Diversification is an essential part of investing. Investors should only invest 
                   <input type="text" value="<?php echo $_SESSION['mobile']; ?>" class="form-control" placeholder="Cell No " name="cellno">
                 </div>
                 <div class="form-right form-group col-lg-6">
-                  <input type="text" value="" class="form-control" placeholder="Phone No  " name="phoneno">
+                  <input type="text" value="" class="form-control" placeholder="National Tax Number " name="phoneno">
                 </div>
                 <div class="clear"></div>
             
            
-   
-              
-              <div class="form-group col-lg-12">
+    <div class="form-group col-lg-12">
                 <textarea name="comments" class="form-control" placeholder="Comments About Investment"></textarea>
               </div>
                 <div class="clear"></div>
+              
+             <!-- <div class="form-group col-lg-12">
+                <textarea name="ask" class="form-control" placeholder=" Ask Any Question From The Project Owner???"></textarea>
+              </div>
+                <div class="clear"></div>-->
+                
+                
                  <div class="form-group">
                  
               <div class="next-btn">
-               <button type="button" class="btn btn-5 blue" data-link="basic-data" onClick="moveform(this,'social-media')">Back</button>
+               <button type="button" class="btn btn-5 blue" data-link="social-media" onClick="moveform(this,'social-media')">Back</button>
               <button type="submit" class="btn btn-4 blue" data-link="social-media">Contribute Now </button>
 
                                             <input type="hidden" name="invest" value="money" >
                                             <input type="hidden" name="userid" value="<?php echo $_SESSION['userid']; ?>" >
-                                              <input type="hidden" name="project" value="<?php echo $_POST['project']; ?>" >
+                                              <input type="hidden" name="project" value="<?php echo $_GET['project']; ?>" >
               </div>
               </div>
               
@@ -249,7 +329,7 @@ Diversification is an essential part of investing. Investors should only invest 
                             min: 2,
                         },
                             notEmpty: {
-                            message: 'Please supply  first name'
+                            message: 'Please enter  first name'
                         }
                     }
                 },
@@ -259,17 +339,17 @@ Diversification is an essential part of investing. Investors should only invest 
                             min: 2,
                         },
                         notEmpty: {
-                            message: 'Please supply  last name'
+                            message: 'Please enter  last name'
                         }
                     }
                 },
                 email: {
                         validators: {
                         notEmpty: {
-                            message: 'Please supply your  Email'
+                            message: 'Please enter your  Email'
                         },
                         emailAddress: {
-                            message: 'Please supply a valid email address'
+                            message: 'Please enter a valid email address'
                         }
                     }
                     },
@@ -279,7 +359,7 @@ Diversification is an essential part of investing. Investors should only invest 
                             min: 2,
                         },
                         notEmpty: {
-                            message: 'Please supply Your address'
+                            message: 'Please enter Your address'
                         }
                     }
                 },
@@ -289,17 +369,19 @@ Diversification is an essential part of investing. Investors should only invest 
                             min: 2,
                         },
                         notEmpty: {
-                            message: 'Please supply Your country'
+                            message: 'Please enter Your country'
                         }
                     }
                 },
+				
+				
                  city: {
                     validators: {
                          stringLength: {
                             min: 2,
                         },
                         notEmpty: {
-                            message: 'Please supply your city'
+                            message: 'Please enter your city'
                         }
                     }
                 },
@@ -309,17 +391,28 @@ Diversification is an essential part of investing. Investors should only invest 
                             min: 2,
                         },
                         numeric: {
-                                message: 'Please provide a vilade phone number.'
+                                message: 'Please enter a valid phone number.'
                         }
                     }
                 },
                  phoneno: {
                     validators: {
                          stringLength: {
-                            min: 2,
+                            min:8,
+			max:8,
                         },
                         integer: {
-                                message: 'Please provide a vilade phone number.'
+                                message: 'Please enter your  National Tax Number .'
+                        }
+                    }
+                },
+				 perk: {
+                    validators: {
+                         stringLength: {
+			max:15,
+                        },
+                        integer: {
+                                message: 'Please Enter Amount You Want To Contribute .'
                         }
                     }
                 },
@@ -329,7 +422,7 @@ Diversification is an essential part of investing. Investors should only invest 
                             min: 2,
                         },
                         integer: {
-                            message: 'Please supply investment amount'
+                            message: 'Please enter investment amount'
                         }
                     }
                 }/*,
@@ -339,7 +432,7 @@ Diversification is an essential part of investing. Investors should only invest 
                             min: 2,
                         },
                         notEmpty: {
-                            message: 'Please supply investment comment'
+                            message: 'Please enter investment comment'
                         }
                     }
                 }*/
@@ -349,7 +442,9 @@ Diversification is an essential part of investing. Investors should only invest 
                 
                 }
             })
+
     });
+	
 </script>
 </body>
 

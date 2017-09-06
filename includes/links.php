@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/custom-style.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
+
 <!-- Progressbar CSS -->
 <link rel="stylesheet" href="assets/js/pieprogress/css/rainbow.css">
 <link rel="stylesheet" href="assets/js/pieprogress/css/progress.css">
@@ -15,6 +16,8 @@
 
 <!-- Carousels CSS -->
 <link href="assets/js/bxslider/jquery.bxslider.css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" href="assets/css/medum.css">
+<link rel="shortcut icon" type="image/png" href="assets/images/c.png"/>
 
 <!-- Google Fonts & Font-Awesome -->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400" rel="stylesheet" type="text/css">

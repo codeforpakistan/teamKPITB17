@@ -1,4 +1,4 @@
- <section class="gray">
+
     <article class="container contactpage">
       <div class="row">
       <div class="col-lg-4"></div>
@@ -10,10 +10,14 @@
                                         <div class="col-lg-4"></div>
          <div class="col-lg-2"></div>
           <div class="col-lg-8">
-            <h3>login here</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore. </p>
-            
-            <form id="login-form" action="control_panel/classes/user.php" class="form-ui" method="post" enctype="multipart/form-data">
+          <div class="panel panel-primary">
+          <div class="panel panel-heading">
+          
+            Login Here
+          
+          </div>
+          <div class="panel panel-body">
+          <form id="login-form" action="control_panel/classes/user.php" class="form-ui" method="post" enctype="multipart/form-data">
             
             <div id="basic-data" class="form-wizard active">
                         
@@ -30,18 +34,31 @@
               </div>
           
               <div class="form-group">
-                <button type="submit" class="btn btn-4 blue default">Submit</button>
-                <input type="hidden" name="log" value="in" />
+              <div class="col-lg-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                   <input type="hidden" name="log" value="in" />
+                </div>
+                <div  class="col-lg-2 pull-right" style="padding-top:10px;">
+                
+                 <a href="register.php?signup"><span style="text-decoration:underline;">Register Now?</span></a> 
+             </div>
               </div>
               
             </div>
             
             </form>
+          
+          </div>
+         
+          
+          </div>
+           
+            
+            
           </div>
                 <div class="col-lg-2"></div>
       </div>
     </article>
-  </section>
   <script>
     $(document).ready(function() {
                    $('#login-form').bootstrapValidator({
@@ -56,10 +73,10 @@
                 email: {
                 validators: {
                     notEmpty: {
-                        message: 'Please supply your email'
+                        message: 'Please enter your email'
                     },
                     emailAddress: {
-                        message: 'Please supply a valid email address'
+                        message: 'Please enter a valid email address'
                     }
                 }
             },

@@ -1,6 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE HTML>
 <html lang="en">
-
 <!-- Mirrored from html.stackthemes.net/Crowd Durshal-preview/elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Apr 2017 07:18:32 GMT -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -15,7 +15,10 @@
 <!-- ************************ CSS Files ************************ -->
 
 <!-- Bootstrap CSS -->
-<?php include('includes/links.php'); ?>
+<?php 
+include('includes/links.php'); 
+  
+?>
 
 
 <!-- HTML5 Shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,6 +26,7 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -65,17 +69,16 @@
       </ul>
     </article>
   </section> -->
-   <div class="row">
-      <div class="col-lg-12">
-      
+
+ <section class="gray">
+    <div class="row text-center" style="padding: 30px 0px;">
       <?php if(isset($_SESSION['msg'])){
-		  echo $_SESSION['msg'];
-	  unset($_SESSION['msg']);
-	  }
-	  ?>
+      echo $_SESSION['msg']; 
+    unset($_SESSION['msg']);
+    }
+    ?>
       
-      </div>
-      </div>
+    </div>
  <?php if(isset($_GET['login'])){
 
 include('includes/login.php');
@@ -86,7 +89,8 @@ elseif(isset($_GET['signup']))
 
   include('includes/signup.php');
 }
- ?> 
+ ?>
+ </section> 
  
  
   
@@ -105,6 +109,5 @@ elseif(isset($_GET['signup']))
  <?php include('includes/js-links.php'); ?>
 
 </body>
-
 <!-- Mirrored from html.stackthemes.net/Crowd Durshal-preview/elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Apr 2017 07:18:32 GMT -->
 </html>

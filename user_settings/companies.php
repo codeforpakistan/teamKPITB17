@@ -50,8 +50,8 @@ $rows = @$query->select_record($sql);
                                                 <td><?php echo $row['c_user']; ?></td>
                                                 <td><?php echo $row['c_phone']; ?></td>
                                                 <td><?php echo $row['c_date']; ?></td>
-                                                <td><?php echo ($row['c_status']==1)?'<span class="label label-success">Active</span>': '<span class="label label-danger">Unactive</span>'; ?></td>
-                                                <td><?php echo ($row['c_verification']==1)?'<span class="label label-success">Verified</span>': '<span class="label label-danger">Unverified</span>'; ?></td>
+                                                <td><?php echo ($row['c_status']==1)?'<span class="label label-success">Active</span>': '<span class="label label-danger">Inactive</span>'; ?></td>
+                                                <td><?php echo ($row['c_verification']==1)?'<span class="label label-success">Verified</span>': '<span class="label label-danger">Not Verified</span>'; ?></td>
                                                 <td>
                                                 <?php echo ($row['c_status']==1)?'<a href="verify.php?cid='.$row['c_id'].'&&name='.$row['c_name'].'"><strong>Add New Project</strong></a>':
 												 '<a href="verify.php?cid='.$row['c_id'].'&&name='.$row['c_name'].'"><strong>Resend Email</strong></a>'; ?>

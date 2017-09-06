@@ -39,7 +39,7 @@ include('control_panel/user_security.php');
   <!-- ************************ Header Bottom | Page Title ************************ -->
  <!--  <section class="header-bottom">
     <article>
-      <div class="container"><h1>Typography & Elements</h1></div>
+      <div class="container"><h1 style="padding-top:120px">Typography & Elements</h1></div>
     </article>
   </section> -->
   <!-- ************************ Breadcrumbs ************************ -->

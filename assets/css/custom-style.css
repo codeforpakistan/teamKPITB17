@@ -13,8 +13,7 @@ body {
 }
 
 header {
-	padding:5px 0px;
-}
+	}
 
 img {
 	border:none;
@@ -39,7 +38,8 @@ a:hover {
 
 p {
 	color: #606060;
-	line-height:24px;
+	line-height:20px;
+	font-size:15px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,6 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-size:45px;
 	font-weight:600;
+    color:#060606;
 }
 
 h2 {
@@ -61,6 +62,8 @@ h2 {
 h3 {
 	font-size:28px;
 	font-weight:400;
+	    font-weight: 700;
+    color: #060606;
 }
 
 h4 {
@@ -101,6 +104,10 @@ section {
 
 section.main-slider {
 	padding:0px;
+}
+section.inner-slider {
+	padding:0px;
+	height:70vh;
 }
 
 section.gray, .gray {
@@ -307,13 +314,13 @@ input:focus, textarea:focus, select:focus, button:focus, radio:focus, checkbox:f
 
 .btn.btn-4 {
 	border:none;
-	font-size:14px;
+	font-size:11px;
 	display:inline;
 	background:none;
 	border-radius:50px;
 	letter-spacing: 1px;
 	text-transform:uppercase;
-	padding:6px 25px 6px 25px;
+	padding:5px 20px 5px 20px;
 	border: solid 1px transparent;
 }
 
@@ -347,13 +354,13 @@ input:focus, textarea:focus, select:focus, button:focus, radio:focus, checkbox:f
 
 .btn.btn-5 {
 	border:none;
-	font-size:14px;
+	font-size:11px;
 	display:inline;
 	background:none;
 	border-radius:50px;
 	letter-spacing: 1px;
 	text-transform:uppercase;
-	padding:6px 25px 6px 25px;
+	padding:5px 20px 5px 20px;
 }
 
 .btn.btn-5.blue {

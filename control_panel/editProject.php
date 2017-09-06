@@ -14,14 +14,32 @@ $sql = "select * from tblusers";
 $users = @$query->select_record($sql);
 $sql = "select * from usercompany";
 $companies = @$query->select_record($sql);
-if ($_POST) {
+if(isset($_POST['daud']) && $_POST['daud'] == 'shah') {
+ 
         $id = $_POST['p_id'];
-        $fields = array('p_title', 'p_amount','p_duration', 'p_link', 'cat_id', 'UserID', 'c_id'
-            , 'p_location', 'p_date', 'p_desc', 'p_story', 'p_status', 'p_verification', 'p_future', 'p_popular');
+        $fields = array('p_title', 'p_amount','p_duration',  'cat_id', 'UserID', 'c_id'
+            , 'p_location', 'p_date', 'p_desc', 'p_story', 'p_status', 'p_verification', 'p_future', 'p_popular','p_info');
         $sql = $query->update_record('tblproject', $fields, "p_id = $id");
 
         if (mysqli_query($connect, $sql)) {
-            $_SESSION['success'] = "Record updated successfully";
+			///////////////// Mail Code for client /////////////////
+			 $to   = $_POST['email'];
+		         $info=$_POST['p_info'];
+ $title =$_POST['p_title'];
+$subject = 'Update Status of    '.$title;
+$name = str_replace(' ', '', $name);
+//$message = 'Please click this link to activate your account:
+//http://kpgoestech.com/crowddurshal/verify.php?email='.$cemail.'&&hash='.$hash.'
+ 
+'; // Our message above including the link';
+$headers = 'From: info@kpgoestech.com' . "\r\n" .
+    'Reply-To: webmaster@example.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+mail($to, $subject, $info, $headers);
+///////////////// Mail Code for client /////////////////
+if(mail){
+            $_SESSION['success'] = "Record updated and Mail Sent Seccussfully";
+}
         } else {
             $_SESSION['error'] = "Error updating record: " . mysqli_error($connect);
         }
@@ -54,6 +72,14 @@ if ($_POST) {
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
+                    <style>
+                    div iframe{
+						width:400px !important;
+						height:70px !important;
+			
+	
+					}
+                    </style>
                     <!-- /.row -->
             <div class="row">
                         <div class="col-lg-12">
@@ -64,39 +90,40 @@ if ($_POST) {
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
                                     <form role="form" id="project-form" action="" method="post" enctype="multipart/form-data">
-                                    <input type="hidden" name="p_id" value="<?php echo $row['p_id']; ?>" />
+                                    <input  type="hidden" name="p_id" value="<?php echo $row['p_id']; ?>" />
                                     <div class="col-lg-12">
                                             <div class="form-group col-lg-6">
                                                 <label>Title </label>
-                                                <input class="form-control" name="p_title" value="<?php echo $row['p_title']; ?>">
+                                                <input  class="form-control" readonly name="p_title" value="<?php echo $row['p_title']; ?>">
                                             </div>
                                             <div class="form-group col-lg-6">
                                                 <label>Goal Amount</label>
-                                                <input class="form-control" name="p_amount" placeholder="Goal Amount" value="<?php echo $row['p_amount']; ?>">
+                                                <input class="form-control" name="p_amount" placeholder="Goal Amount" readonly value="<?php echo $row['p_amount']; ?>">
                                             </div>
                                             
                                         </div>
                                          <div class="col-lg-12">
                                             <div class="form-group col-lg-6">
                                                 <label>Funding Duration </label>
-                                                <input class="form-control" name="p_duration" value="<?php echo $row['p_duration']; ?>">
+                                                <input readonly class="form-control" name="p_duration" value="<?php echo $row['p_duration']; ?>">
                                             </div>
                                             <div class="form-group col-lg-6">
                                                 <label>Fundrasing Image</label>
-                                                <input class="form-control" type="file" name="p_photo" placeholder="Fundrasing Image" value="<?php echo $row['p_photo']; ?>">
+                                                <input disabled class="form-control" type="file" name="p_photo" placeholder="Fundrasing Image" value="<?php echo $row['p_photo']; ?>">
                                             </div>
                                               
                                         </div>
                                          <div class="col-lg-12">
                                             <div class="form-group col-lg-6">
                                                 <label>Fundraising Video </label>
-                                                <input class="form-control" name="p_link" value="<?php echo $row['p_link']; ?>">
+                                             <div >   <?php echo $row['p_link']; ?></div>
                                             </div>
                                              <div class="form-group col-lg-6">
                                                 <label>Category</label>
-                                                <select class="form-control" name="cat_id">
+                                                <select class="form-control" disabled name="cat_id">
                                                 <?php foreach ($categories as $category) { 
                                                         if ($category['cat_id'] == $row['cat_id']) {
+															
                                                     ?>
                                                     <option value="<?php echo $category['cat_id']; ?>" selected ><?php echo $category['cat_name']; ?></option>
                                                         <?php } else { ?>
@@ -114,11 +141,11 @@ if ($_POST) {
                                          <div class="col-lg-12">
                                             <div class="form-group col-lg-6">
                                                 <label>User</label>
-                                                <select class="form-control" name="UserID">
+                                                <select class="form-control" disabled name="UserID">
                                                 <?php foreach ($users as $user) { 
                                                         if ($user['UserID'] == $row['UserID']) {
                                                     ?>
-                                                    <option value="<?php echo $user['UserID']; ?>" selected ><?php echo $user['FirstName'].' '.$user['LastName']; ?></option>
+                                                    <option value="<?php echo $user['UserID'];?>" selected ><?php echo $user['FirstName'].' '.$user['LastName']; ?></option>
                                                         <?php } else { ?>
                                                     <option value="<?php echo $user['UserID']; ?>"><?php echo $user['FirstName'].' '.$user['LastName']; ?></option>
                                                 <?php
@@ -131,17 +158,19 @@ if ($_POST) {
                                             </div>
                                              <div class="form-group col-lg-6">
                                                 <label>Company</label>
-                                                <select class="form-control" name="c_id">
+                                                <select disabled class="form-control" name="c_id">
                                                 <?php foreach ($companies as $company) { 
                                                         if ($company['c_id'] == $row['c_id']) {
+														$email=$company['c_email'];
                                                     ?>
                                                     <option value="<?php echo $company['c_id']; ?>" selected ><?php echo $company['c_name']; ?></option>
                                                         <?php } else { ?>
                                                     <option value="<?php echo $company['c_id']; ?>"><?php echo $company['c_name']; ?></option>
                                                 <?php
                                                         } 
-
+                                                    
                                                     }
+														echo '<input type="text" name="email" value="'.$email.'" style="display:none">';
                                                 ?>
                                                     
                                                 </select>
@@ -166,29 +195,29 @@ if ($_POST) {
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group col-lg-6">
-                                                    <label>Popular</label>
+                                                    <label>To show on home page</label>
                                                     <select class="form-control" name="p_popular">
                                                         <option <?php echo ($row['p_popular'] == 'yes'?'selected': ''); ?> value="yes">Popular</option>
                                                         <option <?php echo ($row['p_popular'] == 'no'?'selected': ''); ?> value="no">Not Popular</option>
                                                     </select>
                                                 </div>                                            
                                             <div class="form-group col-lg-6">
-                                                    <label>Featured</label>
+                                                    <label>To show on success stories</label>
                                                     <select class="form-control" name="p_future">
-                                                        <option <?php echo ($row['p_future'] == 'yes'?'selected': ''); ?> value="yes">Futured</option>
-                                                        <option <?php echo ($row['p_future'] == 'no'?'selected': ''); ?> value="no">Not Futured</option>
+                                                        <option <?php echo ($row['p_future'] == 'yes'?'selected': ''); ?> value="yes">Featured</option>
+                                                        <option <?php echo ($row['p_future'] == 'no'?'selected': ''); ?> value="no">Not Featured</option>
                                                     </select>
                                                 </div> 
                                         </div>
                                         <div class="col-lg-12">
                                              <div class="form-group col-lg-6">
                                                 <label>Location</label>
-                                                <input class="form-control" name="p_location" value="<?php echo $row['p_location']; ?>">
+                                                <input readonly class="form-control" name="p_location" value="<?php echo $row['p_location']; ?>">
                                             </div>
                                             <div class="form-group col-lg-6">
                                                 <label>Date</label>
                                                 <div class='input-group date'  data-provide="datepicker" id='datetime'>
-                                                    <input class="form-control" name="p_date" value="<?php echo $row['p_date']; ?>">
+                                                    <input readonly class="form-control" name="p_date" value="<?php echo $row['p_date']; ?>">
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
@@ -199,20 +228,30 @@ if ($_POST) {
                                         </div>
                                         <div class="col-lg-12">
                                           <div class="form-group col-lg-6">
-                                                <label>Short Descripation</label>
-                                                <textarea name="p_desc" class="form-control"  rows="8"><?php echo $row['p_desc']; ?></textarea>
+                                                <label>Short Description</label>
+                                                <textarea readonly name="p_desc" class="form-control"  rows="8"><?php echo $row['p_desc']; ?></textarea>
                                             </div>
                                             <div class="form-group col-lg-6">
                                                 <label>Your Story </label>
-                                                <textarea name="p_story" class="form-control"  rows="8"><?php echo $row['p_story']; ?></textarea>
+                                                <textarea name="p_story" readonly class="form-control"  rows="8"><?php echo $row['p_story']; ?></textarea>
                                                
                                             </div>
                                               
                                         </div>
+                                        
+                                        <div class="col-lg-12">
+                                             <div class="form-group col-lg-12">
+                                       
+                                                <label>Mail Information</label>
+                                                <textarea name="p_info" class="form-control"  rows="8"><?php echo 'Thanks Your Project  is  Reviewed And Approved. Your Project is Live Now'; ?></textarea>
+                                            </div>
+                                        </div>
                                         <div class="col-lg-12">
                                             <div class="col-lg-6">
-                                                <button type="submit" class="btn btn-default">Submit Button</button>
-                                                <button type="reset" class="btn btn-default">Reset Button</button>
+                                               <a href="listProjects.php"> <div class="btn btn-warning">Back to Projects</div></a>
+                                                <button type="submit" class="btn btn-success" onClick="return confirm('Are You Sure to Submit and Send Email to the Company')">Submit Button</button>
+                                                <input type="hidden" name="daud" value="shah"/>
+                                          
                                             </div>
                                         </div>
                                     </form>
@@ -231,7 +270,12 @@ if ($_POST) {
    	require_once 'incs/footer.php';
    ?>
 <script>
+
     $(document).ready(function() {
+          $('form').bind('submit', function () {
+            $(this).find(':input').prop('disabled', false);
+          });
+
         $('.deleteUser').on('click', function() {
             if (confirm('Are you sure to delete this user?')) 
                 return true;
@@ -313,6 +357,8 @@ if ($_POST) {
                 }
             })
     });
+	
+	
 </script>
 </body>
 

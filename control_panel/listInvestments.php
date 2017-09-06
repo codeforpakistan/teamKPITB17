@@ -78,6 +78,7 @@ if ($numRows <= 0) {
                                                 <th>Phone</th>
                                                 <th>Email </th>
                                                 <th>Address</th>
+                                                <th>Amount</th>
                                                 <th>User</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
@@ -91,8 +92,9 @@ if ($numRows <= 0) {
                                                 <td><?php echo $row['invest_cell']; ?></td>
                                                 <td><?php echo $row['invest_email']; ?></td>
                                                 <td><?php echo $row['invest_address']; ?></td>
+                                                 <td><?php echo $row['invest_amount']; ?></td>
                                                 <td><?php echo $row['FirstName'].' '.$row['LastName']; ?></td>
-                                                <td><?php echo ($row['invest_status']==1)?'<span class="label label-success">Active</span>': '<span class="label label-danger">Unactive</span>'; ?></td>
+                                                <td><?php echo ($row['invest_status']==1)?'<span class="label label-success">Active</span>': '<span class="label label-danger">Inactive</span>'; ?></td>
                                                 <td> <span class="pointer">
                                                       <a  href="editInvestment.php?investmentID=<?php echo $row['invest_id']; ?>">
                                                       <i class="fa fa-pencil-square"></i>

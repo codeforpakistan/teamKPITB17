@@ -23,6 +23,7 @@
 
 <!--Custom Scroll Bar -->
 <script type="text/javascript" src="assets/js/jquery.scroll.js"></script>
+<script type="text/javascript" src="assets/js/medium.js"></script>
 
 <!-- Grayscale Images -->
 <script type="text/javascript" src="assets/js/jquery.hoverizr.min.js"></script>
@@ -53,10 +54,17 @@
 </script> -->
 <script src="control_panel/bower_components/datetimepickers/js/moment.js"></script>
 <script src="control_panel/bower_components/datetimepickers/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="assets/js/excanvas.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.flot.js"></script>
+<script type="text/javascript" src="assets/js/jquery.flot.resize.js"></script>
+<script type="text/javascript" src="assets/js/jquery.flot.time.js"></script>
+<script type="text/javascript" src="assets/js/jquery.flot.tooltip.min.js"></script>
  <script>
     $(document).ready(function() {
+      if ($( ".input-group" ).hasClass( "date" )) {
         $('.date').datetimepicker({
             format: 'YYYY-MM-DD hh:mm:ss'
                 });
+      }
     })
 </script>

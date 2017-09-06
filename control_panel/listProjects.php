@@ -99,8 +99,8 @@ if ($numRows <= 0) {
                                                 <td><?php echo $row['cat_name']; ?></td>
                                                 <td><?php echo $row['c_user']; ?></td>
                                                 <td><?php echo $row['c_name']; ?></td>
-                                                <td><?php echo ($row['p_status']==1)?'<span class="label label-success">Active</span>': '<span class="label label-danger">Unactive</span>'; ?></td>
-                                                <td><?php echo ($row['p_verification']==1)?'<span class="label label-success">Verified</span>': '<span class="label label-danger">Unverified</span>'; ?></td>
+                                                <td><?php echo ($row['p_status']==1)?'<span class="label label-success">Active</span>': '<span class="label label-danger">Inactive</span>'; ?></td>
+                                                <td><?php echo ($row['p_verification']==1)?'<span class="label label-success">Verified</span>': '<span class="label label-danger">Not Verified</span>'; ?></td>
                                                 <td> <span class="pointer">
                                                       <a  href="editProject.php?projectID=<?php echo $row['p_id']; ?>">
                                                       <i class="fa fa-pencil-square"></i>

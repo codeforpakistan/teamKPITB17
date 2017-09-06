@@ -1,0 +1,82 @@
+
+
+To help you fully understand the risks involved when investing in start-up companies, please take some time to read the following tutorial.
+Loss of investment
+
+Most start-up businesses fail and therefore investing in these businesses may involve significant risk. In the event of a business failing you will be liable, as a shareholder in a company, and it is likely that you may lose all, or part, or your investment.
+
+If a business you invest in fails, neither the company you invest in nor Crowdcube will pay you back you investment. You should only invest an amount that you are willing to lose and should build a diversified portfolio to spread risk.
+Lack of liquidity
+
+Liquidity is the ease with which you can sell your shares after you have purchased them. Buying shares in businesses pitching through Crowdcube cannot be sold easily as they are unlikely to be listed on a secondary trading market, such as AIM, Plus or the London Stock Exchange. Even successful companies rarely list shares on such an exchange.
+
+Without a public market to find a buyer for shares it may be more difficult to sell them for a cash return. Investment through Crowdcube should be viewed as a long term and illiquid investment.
+Rarity of dividends
+
+Dividends are payments made by a business to its shareholders from the company's profits. Most of the companies pitching on the Crowdcube website are start-ups or early stage companies, and these companies will rarely pay dividends to their investors. This means that you are unlikely to see a return on your investment until you are able to sell your shares.
+
+Profits are typically re-invested into the business to fuel growth and build shareholder value. Businesses have no obligation to pay shareholder dividends.
+Possibility of dilution
+
+Any investment made through Crowdcube may be subject to dilution in the future. Dilution occurs when a company issues more shares and affects every existing shareholder who does not buy any of the new shares being issued. As a result an existing shareholders proportionate shareholding of the company is reduced, or 'diluted'.
+
+For example, if Bill Gates owns 1,000 shares of Microsoft which represents 100% of the issued and outstanding shares and Microsoft issues 1,000 shares to Paul Allen, then Bill Gates' has experienced a percentage dilution in his ownership from 100% to 50%. Therefore Bill's proportionate shareholding is reduced.
+The need for diversification
+
+Diversification involves spreading your money across multiple investments to reduce risk. However, it will not lessen all types of risk.
+
+Diversification is an essential part of investing. Investors should only invest a proportion of their available investment funds via Crowdcube and should balance this with safer, more liquid investments.
+
+
+<article class="container">
+    <p>To help you fully understand the risks involved when investing in start-up companies, please take some time to read the following tutorial</p>
+     <h4>Loss of investment</h4>
+     <p align="justify">
+     Most start-up businesses fail and therefore investing in these businesses may involve significant risk.
+      In the event of a business failing you will be liable,
+      <br> as a shareholder in a company,
+       and it is likely that you may lose all, or part, or your investment.
+
+If a business you invest in fails, neither the company <br>
+you invest in nor Crowdcube will pay you back you investment. You should only invest an amount that you are willing to lose and should build a diversified
+<br> portfolio to spread risk
+     </p>
+     <h4>Lack of liquidity</h4>
+     <p>
+     Liquidity is the ease with which you can sell your shares after you have purchased them. Buying shares in businesses pitching through Crowdcube cannot 
+     be sold<br> easily as they are unlikely to be listed on a secondary trading market, such as AIM, Plus or the London Stock Exchange. <br>
+     Even successful companies rarely list shares on such an exchange.
+
+Without a public market to find a buyer for shares it may be more difficult to sell them for a cash return.
+<br> Investment through Crowdcube should be viewed as a long term and illiquid investment.
+     
+     </p>
+     
+     <h4>Rarity of dividends</h4>
+     <p>
+     Dividends are payments made by a business to its shareholders from the company's profits. Most of the companies pitching on the Crowdcube website are start-ups 
+     <br> or early stage companies, and these companies will rarely pay dividends to their investors. This means that you are unlikely to see a return on your investment until 
+          <br>you are able to sell your shares.     <br>
+
+Profits are typically re-invested into the business to fuel growth and build shareholder value. Businesses have no obligation to pay shareholder dividends.
+     
+     </p>
+     <h4>Possibility of dilution</h4>
+     <p>
+     Any investment made through Crowdcube may be subject to dilution in the future. Dilution occurs when a company issues more shares and affects every existing 
+   <br>  shareholder who does not buy any of the new shares being issued. As a result an existing
+      shareholders proportionate shareholding of the company is reduced, or 'diluted'.<br>
+
+For example, if Bill Gates owns 1,000 shares of Microsoft which represents 100% of the issued and outstanding shares and Microsoft issues 1,000 shares to Paul Allen,
+<br> then Bill Gates' has experienced a percentage dilution in his ownership from 100% to 50%. Therefore Bill's proportionate shareholding is reduced.
+     </p>
+     <h4>The need for diversification</h4>
+     <p>
+     Diversification involves spreading your money across multiple investments to reduce risk. However, it will not lessen all types of risk.
+     <br>
+
+Diversification is an essential part of investing. Investors should only invest a proportion of their available investment funds via Crowdcube
+<br>and should balance this with safer, more liquid investments.
+     </p>
+     
+    </article>

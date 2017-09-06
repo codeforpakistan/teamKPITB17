@@ -7,7 +7,7 @@
 $sql = "SELECT usercompany.*,CONCAT(FirstName, ' ', LastName) as c_user, tblusers.* 
         FROM usercompany 
         INNER JOIN tblusers 
-          ON  usercompany.UserID = tblusers.UserID order by usercompany.c_id desc";
+          ON  usercompany.UserID = tblusers.UserID order by usercompany.c_date desc";
 $query = new database();
 $rows = $query->select_record($sql);
 if (@$_GET['companyID']) {
@@ -65,7 +65,7 @@ if ($numRows <= 0) {
                                 </div>
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
-                                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
                                                 <th>NTN</th>
@@ -76,9 +76,7 @@ if ($numRows <= 0) {
                                                 <th>Phone No </th>
                                                 <th>Date</th>
                                                 <th>Status</th>
-                                                <th>Verification</th>
-
-                                                <th>Action</th>
+                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -91,9 +89,10 @@ if ($numRows <= 0) {
                                                 <td><?php echo $row['c_user']; ?></td>
                                                 <td><?php echo $row['c_phone']; ?></td>
                                                 <td><?php echo $row['c_date']; ?></td>
-                                                <td><?php echo ($row['c_status']==1)?'<span class="label label-success">Active</span>': '<span class="label label-danger">Unactive</span>'; ?></td>
-                                                <td><?php echo ($row['c_verification']==1)?'<span class="label label-success">Verified</span>': '<span class="label label-danger">Unverified</span>'; ?></td>
-                                                <td> <span class="pointer">
+                                                <td><?php echo ($row['c_status']==1)?'<span class="label label-success">Active</span>': '<span class="label label-danger">Inactive</span>'; ?>
+                                               <br/>
+                                                <span><?php echo ($row['c_verification']==1)?'<span class="label label-success">Verified</span>': '<span class="label label-danger">Not Verified</span>'; ?></span></td>
+                                                                                             <td> <span class="pointer">
                                                       <a  href="editCompany.php?companyID=<?php echo $row['c_id']; ?>">
                                                       <i class="fa fa-pencil-square"></i>
                                                       </a>
@@ -130,6 +129,20 @@ if ($numRows <= 0) {
             else
                 return false;
         });
+
+        $('#dataTables-example').dataTable({
+        "aoColumns": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            { "orderSequence": [ "desc"] }, //first sort desc, then asc
+            null
+        ],
+        "bDestroy": true
+    });
     });
 </script>
 </body>

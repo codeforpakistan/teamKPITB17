@@ -3,3 +3,4 @@
 [17-Apr-2017 05:54:11 America/New_York] PHP Notice:  Undefined index: ad_name in /home/pakec/public_html/crowd/control_panel/index.php on line 21
 [17-Apr-2017 05:54:11 America/New_York] PHP Notice:  A session had already been started - ignoring session_start() in /home/pakec/public_html/crowd/control_panel/config/security.php on line 3
 [17-Apr-2017 05:54:25 America/New_York] PHP Notice:  A session had already been started - ignoring session_start() in /home/pakec/public_html/crowd/control_panel/config/security.php on line 3
+[12-Jul-2017 04:57:17 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/b3m5z4q5/kpgoestech.com/crowddurshal/control_panel/editProject.php:26) in /home4/b3m5z4q5/kpgoestech.com/crowddurshal/control_panel/classes/main_function.php on line 5

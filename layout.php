@@ -12,8 +12,8 @@ $query = new database();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="keywords" content="Crowd Durshal HTML5 Template">
-<meta name="description" content="Crowd Durshal is a HTML5 Responsive Crowdfunding Template">
+<meta name="keywords" content="Crowd Durshal ">
+<meta name="description" content="Crowd Durshal ">
 <meta name="author" content="stackthemes.net">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -41,7 +41,7 @@ $query = new database();
   <!-- ************************ Header Bottom | Page Title ************************ -->
   <section class="header-bottom">
     <article>
-      <div class="container"><h3>User Control Panel </h3></div>
+      <div class="container"><h3 style="padding-top:120px">User Control Panel </h3></div>
     </article>
   </section>
   <!-- ************************ Breadcrumbs ************************ -->
@@ -61,7 +61,8 @@ $query = new database();
       <li class="<?php echo ($_GET['tabe'] == 'profile')?'active':''; ?>"><a href="layout.php?tabe=profile"><i class="fa fa-fw fa-user"></i>Profile</a></li>
       <li class="<?php echo ($_GET['tabe'] == 'companies')?'active':''; ?>"><a href="layout.php?tabe=companies"><i class="fa fa-fw fa-building"></i>Companies</a></li>
       <li class="<?php echo ($_GET['tabe'] == 'projects')?'active':''; ?>"><a href="layout.php?tabe=projects"><i class="fa fa-fw fa-lightbulb-o"></i>Projects</a></li>
-      <li class="<?php echo ($_GET['tabe'] == 'investments')?'active':''; ?>"><a href="layout.php?tabe=investments"><i class="fa fa-bar-chart fa-gear"></i>Investments</a></li>
+      <li class="<?php echo ($_GET['tabe'] == 'investments')?'active':''; ?>"><a href="layout.php?tabe=investments"><i class="fa fa-bar-chart fa-gear"></i>Your Investments</a></li>
+      <li class="<?php echo ($_GET['tabe'] == 'rasied')?'active':''; ?>"><a href="layout.php?tabe=rasied"><i class="fa fa-bar-chart fa-gear"></i>Money Rasied</a></li>
       <li class="<?php echo ($_GET['tabe'] == 'settings')?'active':''; ?>"><a href="layout.php?tabe=settings"><i class="fa fa-fw fa-gear"></i>Settings</a></li>
      <!-- <li class="pull-right"> <a href="company.php"><button class="btn btn-info">Start Project</button></a></li>-->
    
